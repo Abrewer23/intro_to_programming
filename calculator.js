@@ -11,33 +11,27 @@ var handleClick = function(){
 	console.log(window.event);
 	var choice = window.event.target.id;
 	console.log(choice)
+
 	var number1 = document.getElementById("firstNum").value;
 		var number2 = document.getElementById("secondNum").value;
 		var parsedNumber1 = parseFloat(number1);
 		var parsedNumber2 = parseFloat(number2);
-	if (choice == "addition"){		
+		var operation;
+	if (choice == "addition"){
+		operation = " + ";		
 		var answer = parsedNumber1 + parsedNumber2;
-		// Write info to the screen
-		//alert("The answer is " + answer);
-		document.write("The answer is " + answer);
-		console.log("The answer is " + answer);
 	} else if(choice == "subtraction"){
+		operation = " - ";
 		var answer = parsedNumber1 - parsedNumber2;
-		// Write info to the screen
-		//alert("The answer is " + answer);
-		document.write("The answer is " + answer);
-		console.log("The answer is " + answer);
 	} else if(choice == "multiplication"){
+		operation = " * ";
 		var answer = parsedNumber1 * parsedNumber2;
-		// Write info to the screen
-		//alert("The answer is " + answer);
-		document.write("The answer is " + answer);
-		console.log("The answer is " + answer);
 	} else if(choice == "division"){
+		operation = " / ";
 		var answer = parsedNumber1 / parsedNumber2;
-		// Write info to the screen
-		//alert("The answer is " + answer);
-		document.write("The answer is " + answer);
-		console.log("The answer is " + answer);
 	}
+
+	var answerAres = document.getElementById("answers");
+	answerAres.innerHTML = number1 + operation + number2 + " = " + answer;
+
 }
